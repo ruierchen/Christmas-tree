@@ -70,12 +70,12 @@ const App: React.FC = () => {
           onClick={() => setFocusedPhoto(null)}
         >
           <div 
-            className="relative p-1 bg-ARCY-gold shadow-[0_0_100px_rgba(255,215,0,0.4)] max-w-[90vw] max-h-[90vh] overflow-hidden"
+            className="relative p-1 bg-arix-gold shadow-[0_0_100px_rgba(255,215,0,0.4)] max-w-[90vw] max-h-[90vh] overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
              <button 
                onClick={() => setFocusedPhoto(null)}
-               className="absolute top-4 right-4 z-10 p-2 bg-black/50 text-ARCY-gold hover:text-white rounded-full backdrop-blur-md transition-all hover:scale-110"
+               className="absolute top-4 right-4 z-10 p-2 bg-black/50 text-arix-gold hover:text-white rounded-full backdrop-blur-md transition-all hover:scale-110"
              >
                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -84,13 +84,13 @@ const App: React.FC = () => {
 
              <img 
                src={focusedPhoto} 
-               alt="Memory" 
+               alt="Arix Memory" 
                className="max-w-full max-h-[85vh] object-contain block" 
              />
              
-             <div className="p-4 bg-ARCY-emerald text-center">
-                <p className="font-display text-ARCY-gold tracking-[0.3em] text-sm mb-1 uppercase">ARCY Signature Memory</p>
-                <p className="font-serif italic text-ARCY-goldDim text-xs">Captured in Brilliance</p>
+             <div className="p-4 bg-arix-emerald text-center">
+                <p className="font-display text-arix-gold tracking-[0.3em] text-sm mb-1 uppercase">Arix Signature Memory</p>
+                <p className="font-serif italic text-arix-goldDim text-xs">Captured in Brilliance</p>
              </div>
           </div>
         </div>
