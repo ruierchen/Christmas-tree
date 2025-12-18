@@ -1,8 +1,13 @@
+
 import React, { useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { CONFIG, COLORS } from '../constants';
 import { TreeMorphState } from '../types';
+
+// Fix: Declare intrinsic elements as any to bypass JSX.IntrinsicElements errors
+const points = 'points' as any;
+const shaderMaterial = 'shaderMaterial' as any;
 
 // Custom Shader Material for performant morphing
 const FoliageShaderMaterial = {

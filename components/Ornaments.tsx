@@ -5,17 +5,30 @@ import * as THREE from 'three';
 import { CONFIG, COLORS } from '../constants';
 import { TreeMorphState, OrnamentType, OrnamentInstance } from '../types';
 
+// Fix: Declare intrinsic elements as any to bypass JSX.IntrinsicElements errors
+const mesh = 'mesh' as any;
+const extrudeGeometry = 'extrudeGeometry' as any;
+const meshStandardMaterial = 'meshStandardMaterial' as any;
+const group = 'group' as any;
+const instancedMesh = 'instancedMesh' as any;
+const boxGeometry = 'boxGeometry' as any;
+const meshPhysicalMaterial = 'meshPhysicalMaterial' as any;
+const sphereGeometry = 'sphereGeometry' as any;
+const octahedronGeometry = 'octahedronGeometry' as any;
+const torusGeometry = 'torusGeometry' as any;
+const cylinderGeometry = 'cylinderGeometry' as any;
+
 interface OrnamentsProps {
   state: TreeMorphState;
 }
 
 const StarShape = new THREE.Shape();
-const points = 5;
+const pointsCount = 5;
 const outerRadius = 1.2;
 const innerRadius = 0.6;
-for (let i = 0; i < points * 2; i++) {
+for (let i = 0; i < pointsCount * 2; i++) {
   const r = (i % 2 === 0) ? outerRadius : innerRadius;
-  const a = (i / (points * 2)) * Math.PI * 2 + Math.PI / 10;
+  const a = (i / (pointsCount * 2)) * Math.PI * 2 + Math.PI / 10;
   const x = Math.cos(a) * r;
   const y = Math.sin(a) * r;
   if (i === 0) StarShape.moveTo(x, y);

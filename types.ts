@@ -2,15 +2,24 @@
 export enum TreeMorphState {
   SCATTERED = 'SCATTERED',
   TREE_SHAPE = 'TREE_SHAPE',
+  FOCUSED = 'FOCUSED'
 }
 
 export type Vector3Array = [number, number, number];
 
-export interface ParticleData {
-  scatterPos: Float32Array;
-  treePos: Float32Array;
-  colors: Float32Array;
-  sizes: Float32Array;
+export interface PhotoFrameData {
+  id: string;
+  url: string;
+  treePos: Vector3Array;
+  scatterPos: Vector3Array;
+  rotation: Vector3Array;
+}
+
+export interface HandData {
+  x: number; // -1 to 1
+  y: number; // -1 to 1
+  gesture: 'OPEN' | 'FIST' | 'PINCH' | 'NONE';
+  isPresent: boolean;
 }
 
 export enum OrnamentType {
@@ -31,15 +40,6 @@ export interface OrnamentInstance {
   color: string;
 }
 
-export interface PhotoFrameData {
-  id: string;
-  url: string;
-  treePos: Vector3Array;
-  scatterPos: Vector3Array;
-  rotation: Vector3Array;
-}
-
-// Gemini Types
 export type AspectRatio = "1:1" | "2:3" | "3:2" | "3:4" | "4:3" | "9:16" | "16:9" | "21:9";
 export type ImageSize = "1K" | "2K" | "4K";
 
